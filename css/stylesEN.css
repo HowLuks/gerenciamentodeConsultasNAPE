@@ -1,0 +1,318 @@
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 50%, #E0F2F1 100%);
+        overflow-x: hidden;
+        /* impede barra lateral horizontal */
+        overflow-y: auto;
+        /* permite só rolar pra baixo */
+      }
+
+      .faixa {
+        background: linear-gradient(90deg,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+        padding: 10px;
+      }
+
+      .content hr {
+        background: linear-gradient(to right,
+            #289b42 0%,
+            #26923f 20%,
+            #87ba2d 40%,
+            #87ba2d 70%,
+            #f6db25 100%);
+        border: none;
+        outline: none;
+        height: 8px;
+        width: 100%;
+      }
+        .titulos-barra h1 {
+          color: white;
+          margin-left: 15px;
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+
+        .titulos-barra h2 {
+          color: #f1f1f1;
+          margin-left: 15px;
+          font-size: 1.2rem;
+          font-weight: normal;
+        }
+      ul hr {
+        width: 100%;
+        height: 5px;
+        margin-top: 30px;
+        background-color: white;
+        border: none;
+        outline: none;
+      }
+
+      nav .barraDados {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+      }
+
+      .container .info .icon-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+
+      .header-text h1 {
+        color: #2d3748;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .header-text p {
+        color: #718096;
+        font-size: 1.1rem;
+        margin: 5px 0 0;
+      }
+
+      .conteudo-main {
+        padding: 30px 20px;
+      }
+
+      .tela-agendamento .container {
+        background: white;
+        margin: 0 auto 30px;
+        max-width: 500px;
+        position: relative;
+        display: flex;
+        border-radius: 10px;
+        padding: 15px 20px 15px 28px;
+        /* espaço extra à esquerda para a "borda" */
+        box-shadow: rgba(50, 165, 96, 0.1) 0px 8px 32px, rgba(0, 0, 0, 0.08) 0px 2px 16px;
+        overflow: hidden;
+      }
+
+      /* Borda esquerda com gradiente usando pseudo-elemento */
+      .tela-agendamento .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100%;
+        border-radius: 10px;
+        background: linear-gradient(to bottom,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+      }
+
+      /* Informações do container */
+      .tela-agendamento .container .info {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+      }
+
+      .tela-agendamento .container .header-text {
+        padding: 12px;
+        color: rgb(40, 37, 37);
+        font-size: 20px;
+      }
+
+      .cards-section {
+        display: grid;
+        justify-content: center;
+        /* centraliza o grid horizontalmente */
+        grid-template-columns: repeat(3, 1fr);
+        /* máximo de 3 cards por linha */
+        gap: 20px;
+        padding: 20px;
+        max-width: 1100px;
+        /* opcional: para centralizar melhor em telas grandes */
+        margin: 0 auto;
+        /* centraliza a seção na página */
+      }
+
+      .card {
+        height: 85px;
+        /* altura fixa */
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 10px;
+        padding: 15px 20px;
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+      }
+
+      .card-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .card-text h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #343a40;
+      }
+
+      .card-text p {
+        margin: 3px 0 0;
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      /* Overlay (fundo preto transparente) */
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        /* preto transparente */
+        backdrop-filter: blur(2px);
+        /* aplica desfoque */
+        -webkit-backdrop-filter: blur(2px);
+        /* suporte Safari */
+        /* preto transparente */
+        display: none;
+        /* escondido por padrão */
+        z-index: 900;
+      }
+
+      #overlay.active {
+        display: block;
+      }
+
+      @media (max-width: 1024px) {
+        .cards-section {
+          grid-template-columns: repeat(2, 1fr);
+          /* 2 cards por linha */
+        }
+      }
+
+      @media (max-width: 600px) {
+        .cards-section {
+          grid-template-columns: 1fr;
+          /* 1 card por linha */
+        }
+      }
+
+      /* Sidebar (menu lateral) */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        /* escondida inicialmente */
+        width: 250px;
+        height: 100%;
+        background: linear-gradient(180deg, #32a560, #0ebd62, #4ec27c);
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+
+        transition: left 0.3s ease;
+        z-index: 1000;
+        color: white;
+      }
+
+      ul div {
+        padding: 1px 15px 1px 15px;
+      }
+
+      .sidebar.active {
+        left: 0;
+        /* aparece */
+      }
+
+      .sidebar-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sidebar-header h2 {
+        margin: 0;
+        font-size: 1.3rem;
+      }
+
+      #close-btn {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 20px 0 0;
+      }
+
+      .sidebar ul li {
+        margin: 15px 0;
+      }
+
+      .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        padding: 8px;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+
+      .sidebar .aba:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .sidebar .aba {
+        display: flex;
+        align-items: center;
+      }
+
+      .icone-aba {
+        width: 40px;
+        height: 40px;
+      }
+
+
+
+      /* conteúdo principal */
+      .content {
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 500;
+        /* fica acima do fundo */
+      }
+
+      /* quando o sidebar está ativo, empurra o conteúdo */
+      .sidebar.active~.content {
+        transform: translateX(250px);
+        /* mesmo valor da largura do menu */
+      }
+
+      .sidebar.active~.conteudo-main {
+        transform: translateX(120px);
+        /* mesmo valor da largura do menu */
+      }

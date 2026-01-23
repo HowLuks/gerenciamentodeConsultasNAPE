@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ficha do Usuário - {$usuario['nome_usuario']}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        line-height: 1.2;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #32a560;
+      }
+      h1 {
+        color: #32a560;
+        margin: 0;
+      }
+      .subtitle {
+        color: #666;
+        font-size: 16px;
+      }
+      .info-section {
+        margin-bottom: 25px;
+      }
+      .info-title {
+        background-color: #f2f2f2;
+        padding: 8px 15px;
+        font-weight: bold;
+        color: #32a560;
+        border-left: 4px solid #32a560;
+        margin-bottom: 10px;
+      }
+      .info-content {
+        padding: 0 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+      th {
+        background-color: #32a560;
+        color: white;
+        padding: 10px;
+        text-align: left;
+        font-size: 13px;
+        width: 19%;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .footer {
+        margin-top: 40px;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>FICHA DO USUÁRIO</h1>
+      <p class="subtitle">Sistema NAPE - $dataAtual</p>
+    </div>
+
+    <div class="info-section">
+      <div class="info-title">DADOS PESSOAIS</div>
+      <div class="info-content">
+        <table>
+          <tr>
+            <th>Nº do Prontuário</th>
+            <td>55</td>
+            <th>Nome Do Usuário</th>
+            <td>Kayro</td>
+          </tr>
+          <tr>
+            <th>Contato</th>
+            <td>432432</td>
+            <th>Situação</th>
+            <td>Autismo</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-title">INFORMAÇÕES CONFIDENCIAIS</div>
+      <div class="info-content">
+        <table>
+          <tr>
+            <th>Diagnóstico</th>
+            <td>Teste</td>
+            <th>Quantidade de Terapias</th>
+            <td>5</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <th>Informações Adicionais</th>
+            <td>Não tem</td>
+            <th>Status do agendamento</th>
+            <td>Agendado</td>
+          </tr>
+          <tr>
+            <th>Data do agendamento</th>
+            <td>17/12/2025</td>
+            <th>Hora</th>
+            <td>15:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-title">PROFISSIONAL RESPONSÁVEL</div>
+      <div class="info-content">
+        <table>
+          <tr>
+            <th>Profissional</th>
+            <td>
+              " . htmlspecialchars($usuario['nome_profissional'] ?? 'Não
+              atribuído') . "
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Documento gerado automaticamente pelo Sistema NAPE</p>
+      <p>
+        Este documento é confidencial e destinado exclusivamente para uso
+        interno
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,471 @@
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #32a560;
+      --primary-dark: #0ebd62;
+      --primary-light: #4ec27c;
+      --text-primary: #2C3E50;
+      --text-secondary: #5D6D7E;
+      --background-primary: #F8F9FA;
+      --background-secondary: #FFFFFF;
+      --border-color: #E1E8ED;
+      --border-radius: 12px;
+      --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+      --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.1);
+      --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    html,
+    body {
+      background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 50%, #E0F2F1 100%);
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      width: 100%;
+      overflow-y: hidden;
+    }
+
+    /* Header com menu hamburger */
+    .faixa {
+      background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--primary-light) 100%);
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .barraDados {
+      display: flex;
+      align-items: center;
+      margin: 5px;
+    }
+
+    .titulos-barra h1 {
+      color: white;
+      margin-left: 15px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .titulos-barra h2 {
+      color: #f1f1f1;
+      margin-left: 15px;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+
+    hr {
+      background: linear-gradient(to right, #289b42, #26923f 20%, #87ba2d 70%, #f6db25);
+      border: none;
+      height: 8px;
+      width: 100%;
+      margin-top: 58px;
+      /* Compensa a altura fixa do header */
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary-color), var(--primary-dark), var(--primary-light));
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+      transition: left 0.3s ease;
+      z-index: 1000;
+      color: white;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 20px 0 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .sidebar .aba:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar .aba {
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .icone-aba {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    ul hr {
+      width: 100%;
+      height: 5px;
+      margin-top: 30px;
+      background-color: white;
+      border: none;
+      outline: none;
+    }
+
+    /* Overlay para mobile */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      display: none;
+      z-index: 900;
+    }
+
+    #overlay.active {
+      display: block;
+    }
+
+    /* Conteúdo principal */
+    .content {
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 500;
+    }
+
+    .sidebar.active~.content {
+      transform: translateX(250px);
+    }
+
+    .sidebar.active~.conteudo-main {
+      transform: translateX(120px);
+    }
+
+    /* Main Content - FORMULÁRIO CENTRALIZADO E REDUZIDO */
+    .conteudo-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 68px);
+      padding: 20px;
+    }
+
+    /* Form Container - REDUZIDO */
+    .form-container {
+      width: 100%;
+      max-width: 600px; /* REDUZIDO de 800px para 600px */
+      margin: 0 auto;
+    }
+
+    /* Form Card - REDUZIDO */
+    .form-card {
+      background: var(--background-secondary);
+      border-radius: var(--border-radius);
+      padding: 2rem; /* REDUZIDO de 2.5rem */
+      box-shadow: var(--shadow-heavy);
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-dark), var(--primary-light));
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 1.5rem; /* REDUZIDO de 2.5rem */
+    }
+
+    .form-header h3 {
+      font-size: 1.5rem; /* REDUZIDO de 1.8rem */
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem; /* REDUZIDO de 1.1rem */
+    }
+
+    /* Form Styles - REDUZIDO */
+    .edit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem; /* REDUZIDO de 1.5rem */
+      flex: 1;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem; /* REDUZIDO de 0.5rem */
+      width: 100%;
+    }
+
+    .form-group label {
+      font-weight: 500;
+      color: var(--text-primary);
+      font-size: 0.9rem; /* REDUZIDO de 0.95rem */
+    }
+
+    /* Sistema flexível de linhas com 2 colunas */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem; /* REDUZIDO de 1.5rem */
+      width: 100%;
+    }
+
+    /* Sistema flexível para quando quiser colocar mais campos */
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      width: 100%;
+    }
+
+    /* Campo que ocupa todas as colunas */
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* Campo que ocupa 2 colunas */
+    .span-2 {
+      grid-column: span 2;
+    }
+
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select,
+    .input-wrapper textarea {
+      width: 100%;
+      padding: 0.8rem 1rem; /* REDUZIDO de 0.9rem 1.2rem */
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem; /* REDUZIDO de 1rem */
+      background: #f8f9fa;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .input-wrapper input:focus,
+    .input-wrapper select:focus,
+    .input-wrapper textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background: white;
+      box-shadow: 0 0 0 2px rgba(50, 165, 96, 0.1); /* REDUZIDO de 3px */
+    }
+
+    .input-wrapper.with-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem; /* REDUZIDO de 0.8rem */
+      padding: 0.7rem 0.9rem; /* REDUZIDO de 0.8rem 1rem */
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #f8f9fa;
+    }
+
+    .input-wrapper.with-icon input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 0;
+    }
+
+    .input-wrapper.with-icon input:focus {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .input-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Form Actions - REDUZIDO */
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.8rem; /* REDUZIDO de 1rem */
+      margin-top: 1.5rem; /* REDUZIDO de 2.5rem */
+      padding-top: 1.5rem; /* REDUZIDO de 2rem */
+      border-top: 1px solid var(--border-color);
+    }
+
+    .btn {
+      padding: 0.8rem 2rem; /* REDUZIDO de 0.9rem 2.5rem */
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem; /* REDUZIDO de 1rem */
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px; /* REDUZIDO de 140px */
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .btn-secondary {
+      background: #f1f1f1;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #e8e8e8;
+    }
+
+    .form-text {
+      font-size: 0.8rem; /* REDUZIDO de 0.85rem */
+      color: var(--text-secondary);
+      margin-top: 0.2rem; /* REDUZIDO de 0.25rem */
+      display: block;
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .sidebar.active~.conteudo-main {
+        transform: translateX(0);
+      }
+
+      .sidebar.active~.content::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      .form-container {
+        max-width: 500px; /* REDUZIDO em telas menores */
+      }
+    }
+
+    @media (max-width: 768px) {
+      body{
+        overflow-y: auto;
+      }
+      .conteudo-main {
+        padding: 15px;
+        margin-top: 60px;
+        min-height: calc(100vh - 60px);
+      }
+
+      .form-card {
+        padding: 1.5rem; /* REDUZIDO em mobile */
+      }
+
+      .form-row,
+      .form-row-3 {
+        grid-template-columns: 1fr;
+        gap: 0.8rem; /* REDUZIDO em mobile */
+      }
+
+      .full-width,
+      .span-2 {
+        grid-column: 1;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .btn {
+        width: 100%;
+        min-width: auto;
+        padding: 0.7rem 1.5rem; /* REDUZIDO em mobile */
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9rem; /* REDUZIDO em mobile */
+      }
+
+      .form-header h3 {
+        font-size: 1.3rem; /* REDUZIDO em mobile */
+      }
+
+      .form-card {
+        padding: 1.2rem; /* REDUZIDO em mobile */
+      }
+
+      .titulos-barra h1 {
+        font-size: 1.2rem;
+      }
+
+      .titulos-barra h2 {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 0.7rem 1.2rem; /* REDUZIDO em mobile */
+      }
+    }

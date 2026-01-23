@@ -1,0 +1,709 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 50%, #E0F2F1 100%);
+    overflow-x: hidden;
+    /* impede barra lateral horizontal */
+    overflow-y: auto;
+    /* permite só rolar pra baixo */
+}
+
+.conteudo-main {
+    padding: 30px 20px;
+}
+
+.tela-agendamento .container {
+    background: white;
+    margin: 0 auto 30px;
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    padding: 15px 20px 15px 28px;
+    /* espaço extra à esquerda para a "borda" */
+    box-shadow: rgba(50, 165, 96, 0.1) 0px 8px 32px, rgba(0, 0, 0, 0.08) 0px 2px 16px;
+    overflow: hidden;
+}
+
+/* Borda esquerda com gradiente usando pseudo-elemento */
+.tela-agendamento .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to bottom,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+    border-radius: 0 4px 4px 0;
+}
+
+.header-text h1 {
+    color: #2d3748;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-text p {
+    color: #718096;
+    font-size: 1.1rem;
+    margin: 5px 0 0;
+}
+
+.faixa {
+    background: linear-gradient(90deg,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+    padding: 10px;
+}
+
+.content hr {
+    background: linear-gradient(to right,
+            #289b42 0%,
+            #26923f 20%,
+            #87ba2d 40%,
+            #87ba2d 70%,
+            #f6db25 100%);
+    border: none;
+    outline: none;
+    height: 8px;
+    width: 100%;
+}
+
+ul hr {
+    width: 100%;
+    height: 5px;
+    margin-top: 30px;
+    background-color: white;
+    border: none;
+    outline: none;
+}
+
+nav .barraDados {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.container .info .icon-logo {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.tela-agendamento .cardsSuperiores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.tela-agendamento .container1 {
+    position: relative;
+    color: white;
+    background: linear-gradient(90deg,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    /* espaço extra à esquerda para a "borda" */
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.196) 0px 5px 15px;
+    overflow: hidden;
+}
+
+
+
+/* Informações do container */
+.tela-agendamento .container .info {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.tela-agendamento .container .header-text {
+    padding: 12px;
+    color: rgb(40, 37, 37);
+    font-size: 20px;
+}
+
+.parteCima .opcoes {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 20px auto;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.botao-agendamento h2 {
+    margin: 7px;
+}
+
+.container-agenda {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 20px auto;
+    align-items: center;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 90%;
+    /* deixa mais fluido */
+    max-width: 1200px;
+    /* limite em telas grandes */
+    overflow: hidden;
+    /* não deixa borda sair */
+}
+
+.conteudoBaixo {
+    width: 100%;
+    padding: 10px;
+    overflow-x: auto;
+    /* rolagem horizontal no mobile */
+}
+
+.container-agenda .opcoes {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.opcoes .clientes {
+    margin: 7px;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.clientes .filtro {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 20px;
+}
+
+.container-agenda .opcoes .conteudoBaixo {
+    display: flex;
+}
+
+.cardsSuperiores {
+    display: flex;
+
+}
+
+.botao-agendamento {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: white;
+    background: linear-gradient(90deg,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+    cursor: pointer;
+}
+
+.buttonFiltrar {
+    background: linear-gradient(90deg,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+    margin: auto 10px;
+    height: 45px;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.286) 0px 7px 29px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.filtroGeral {
+    align-items: center;
+    display: flex;
+    margin: 10px;
+}
+
+.botao-agendamento:hover {
+    background: linear-gradient(90deg,
+            #459766 0%,
+            #459766 50%,
+            #459766 100%);
+}
+
+.botao-cliente {
+    background-color: rgb(229, 229, 229);
+}
+
+.botao-cliente button:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+@media (max-width: 1024px) {
+    .cards-section {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-section {
+        grid-template-columns: 1fr;
+        /* 1 card por linha */
+    }
+}
+
+/* Sidebar (menu lateral) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* escondida inicialmente */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(180deg, #32a560, #0ebd62, #4ec27c);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+
+    transition: left 0.3s ease;
+    z-index: 1000;
+    color: white;
+}
+
+ul div {
+    padding: 1px 15px 1px 15px;
+}
+
+.sidebar.active {
+    left: 0;
+    /* aparece */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.sidebar .aba:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .aba {
+    display: flex;
+    align-items: center;
+}
+
+.icone-aba {
+    width: 40px;
+    height: 40px;
+}
+
+/* conteúdo principal */
+.content {
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 500;
+    /* fica acima do fundo */
+}
+
+/* quando o sidebar está ativo, empurra o conteúdo */
+.sidebar.active~.content {
+    transform: translateX(250px);
+    /* mesmo valor da largura do menu */
+}
+
+.sidebar.active~.conteudo-main {
+    transform: translateX(120px);
+    /* mesmo valor da largura do menu */
+}
+
+.table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 5px 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+.table thead {
+    background: linear-gradient(90deg, #32a560 0%, #0ebd62 50%, #4ec27c 100%);
+    color: white;
+}
+
+.conteudoBaixo {
+    width: 100%;
+    padding: 10px;
+}
+
+.table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-family: "Roboto", sans-serif;
+}
+
+.table thead {
+    background: linear-gradient(90deg, #32a560 0%, #0ebd62 50%, #4ec27c 100%);
+    color: white;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    /* evita quebra em colunas pequenas */
+}
+
+.table tbody tr:hover {
+    background-color: #f1f8f4;
+}
+
+.table th {
+    font-weight: bold;
+}
+
+
+.table th,
+.table td {
+    padding: 10px 25px;
+    text-align: center;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.table tbody tr:hover {
+    background-color: #e8f5e8;
+}
+
+/* status */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status.ativo {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.status.pendente {
+    background-color: #fff9c4;
+    color: #f57f17;
+}
+
+.status.cancelado {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+/*Popup de cadastro de agendamento8*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    animation: aparecer 0.3s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+
+.modal-info .coluna {
+    width: 100%;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.labelCadastro {
+    font-size: 18px;
+}
+
+.inputCadastro {
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    width: 95%;
+    margin-top: 7px;
+    height: 40px;
+}
+
+.conjunto-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-extra textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+/* Pump lateral */
+.pump {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    /* começa escondido */
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+.pump.active {
+    right: 0;
+    /* aparece */
+}
+
+.pump-content {
+    padding: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.pump-header {
+    text-align: center;
+}
+
+.foto-paciente {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .parteCima .opcoes {
+        display: flex;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .opcoes .clientes {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .botao-agendamento {
+        margin: 10px auto;
+        display: flex;
+        align-items: center;
+        border: none;
+        width: 160px;
+        padding: 3px;
+        font-size: 10px;
+    }
+
+    .clientes .filtro {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .buttonFiltrar {
+        background: linear-gradient(90deg,
+                #32a560 0%,
+                #0ebd62 50%,
+                #4ec27c 100%);
+        margin: 5px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        width: 90%;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.286) 0px 7px 29px 0px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .filtroGeral {
+        align-items: center;
+        display: block;
+        margin: 2px;
+    }
+
+    .container-agenda {
+        width: 100%;
+        /* ocupa 100% da tela */
+        margin: 0;
+        /* remove margens laterais */
+        border-radius: 0;
+        padding: 5px;
+    }
+
+    .conteudoBaixo {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .table {
+        border-collapse: collapse;
+        margin: 2px auto;
+        padding: 2px;
+        font-size: 12px;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    .conteudoBaixo .botao-agendamento{
+        width: 50%;
+        padding: 5px;
+        margin: 3px;
+    }
+    .modal-actions .botao-agendamento{
+        width: 30%;
+        padding: 5px;
+        margin: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-actions{
+        justify-content: center;
+    }
+
+}

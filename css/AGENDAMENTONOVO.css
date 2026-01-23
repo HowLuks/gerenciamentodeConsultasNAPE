@@ -1,0 +1,1039 @@
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          height: 100vh;
+          font-family: "Roboto", sans-serif;
+          background: linear-gradient(135deg,
+              #e8f5e8 0%,
+              #f1f8e9 50%,
+              #e0f2f1 100%);
+          overflow-x: hidden;
+          /* impede barra lateral horizontal */
+          overflow-y: auto;
+          /* permite só rolar pra baixo */
+        }
+
+        .conteudo-main {
+          padding: 30px 20px;
+        }
+
+        .tela-agendamento .container {
+          background: white;
+          margin: 0 auto 30px;
+          max-width: 500px;
+          position: relative;
+          display: flex;
+          border-radius: 10px;
+          padding: 15px 20px 15px 28px;
+          /* espaço extra à esquerda para a "borda" */
+          box-shadow: rgba(50, 165, 96, 0.1) 0px 8px 32px,
+            rgba(0, 0, 0, 0.08) 0px 2px 16px;
+          overflow: hidden;
+        }
+
+        /* Borda esquerda com gradiente usando pseudo-elemento */
+        .tela-agendamento .container::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 8px;
+          height: 100%;
+          border-radius: 10px;
+          background: linear-gradient(to bottom,
+              #32a560 0%,
+              #0ebd62 50%,
+              #4ec27c 100%);
+          border-radius: 0 4px 4px 0;
+        }
+
+        .header-text h1 {
+          color: #2d3748;
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        .header-text p {
+          color: #718096;
+          font-size: 1.1rem;
+          margin: 5px 0 0;
+        }
+
+        .faixa {
+          background: linear-gradient(90deg,
+              #32a560 0%,
+              #0ebd62 50%,
+              #4ec27c 100%);
+          padding: 10px;
+        }
+
+        .titulos-barra h1 {
+          color: white;
+          margin-left: 15px;
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+
+        .titulos-barra h2 {
+          color: #f1f1f1;
+          margin-left: 15px;
+          font-size: 1.2rem;
+          font-weight: normal;
+        }
+
+        .content hr {
+          background: linear-gradient(to right,
+              #289b42 0%,
+              #26923f 20%,
+              #87ba2d 40%,
+              #87ba2d 70%,
+              #f6db25 100%);
+          border: none;
+          outline: none;
+          height: 8px;
+          width: 100%;
+        }
+
+        ul hr {
+          width: 100%;
+          height: 5px;
+          margin-top: 30px;
+          background-color: white;
+          border: none;
+          outline: none;
+        }
+
+        nav .barraDados {
+          display: flex;
+          align-items: center;
+          margin: 5px;
+        }
+
+        .container .info .icon-logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        .tela-agendamento .cardsSuperiores {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+
+        .tela-agendamento .container1 {
+          position: relative;
+          color: white;
+          background: linear-gradient(90deg,
+              #32a560 0%,
+              #0ebd62 50%,
+              #4ec27c 100%);
+          font-size: 20px;
+          border-radius: 10px;
+          padding: 20px;
+          justify-content: center;
+          align-items: center;
+          margin: 15px;
+          /* espaço extra à esquerda para a "borda" */
+          width: 350px;
+          box-shadow: rgba(0, 0, 0, 0.196) 0px 5px 15px;
+          overflow: hidden;
+        }
+
+        /* Informações do container */
+        .tela-agendamento .container .info {
+          display: flex;
+          align-items: center;
+          font-size: 20px;
+        }
+
+        .tela-agendamento .container .header-text {
+          padding: 12px;
+          color: rgb(40, 37, 37);
+          font-size: 20px;
+        }
+
+        .search form {
+          display: flex;
+          align-items: center;
+          background: #f1f1f1;
+          border: 1px solid rgba(0, 0, 0, 0.534);
+          border-radius: 10px;
+          padding: 5px 10px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          transition: all 0.3s ease;
+          width: 250px;
+          max-width: 100%;
+        }
+
+        .search input[type="text"] {
+          border: none;
+          outline: none;
+          padding: 8px 12px;
+          border-radius: 10px;
+          width: 100%;
+          font-size: 16px;
+          background: transparent;
+          transition: all 0.3s ease;
+        }
+
+        .search input[type="text"]::placeholder {
+          color: #999;
+        }
+
+        .search form:hover {
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 18px;
+        }
+
+        .parteCima .opcoes {
+          background-color: rgb(255, 255, 255);
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          margin: 20px auto;
+          align-items: center;
+          display: flex;
+          border-radius: 10px;
+          justify-content: space-between;
+          width: 80%;
+        }
+
+        .container-agenda {
+          background-color: rgb(255, 255, 255);
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          margin: 20px auto;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          border-radius: 10px;
+          width: 80%;
+          width: 90%;
+          /* deixa mais fluido */
+          max-width: 1200px;
+          /* limite em telas grandes */
+          overflow: hidden;
+          /* não deixa borda sair */
+        }
+
+        .container-agenda .opcoes {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .opcoes .clientes {
+          margin: 10px;
+          display: flex;
+          align-items: center;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        .clientes .filtro {
+          border: 1px solid gray;
+          padding: 10px;
+          border-radius: 8px;
+          outline: none;
+          font-size: 20px;
+        }
+
+        .container-agenda .opcoes .conteudoBaixo {
+          display: flex;
+        }
+
+        .cardsSuperiores {
+          display: flex;
+        }
+
+        .botao-agendamento {
+          margin: 10px;
+          display: flex;
+          align-items: center;
+          border: none;
+          padding: 10px;
+          border-radius: 8px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          color: white;
+          background: linear-gradient(90deg,
+              #32a560 0%,
+              #0ebd62 50%,
+              #4ec27c 100%);
+          cursor: pointer;
+        }
+
+        .botao-agendamento:hover {
+          background: linear-gradient(90deg,
+              #459766 0%,
+              #459766 50%,
+              #459766 100%);
+        }
+
+        .botao-cliente {
+          background-color: rgb(229, 229, 229);
+        }
+
+        .botao-cliente button:hover {
+          background-color: rgb(200, 200, 200);
+        }
+
+        /* Sidebar (menu lateral) */
+        .sidebar {
+          position: fixed;
+          top: 0;
+          left: -250px;
+          /* escondida inicialmente */
+          width: 250px;
+          height: 100%;
+          background: linear-gradient(180deg, #32a560, #0ebd62, #4ec27c);
+          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+
+          transition: left 0.3s ease;
+          z-index: 1000;
+          color: white;
+        }
+
+        ul div {
+          padding: 1px 15px 1px 15px;
+        }
+
+        .sidebar.active {
+          left: 0;
+          /* aparece */
+        }
+
+        .sidebar-header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .sidebar-header h2 {
+          margin: 0;
+          font-size: 1.3rem;
+        }
+
+        #close-btn {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: white;
+          cursor: pointer;
+        }
+
+        .sidebar ul {
+          list-style: none;
+          padding: 20px 0 0;
+        }
+
+        .sidebar ul li {
+          margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          display: block;
+          padding: 8px;
+          border-radius: 8px;
+          transition: background 0.3s;
+        }
+
+        .sidebar .aba:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar .aba {
+          display: flex;
+          align-items: center;
+        }
+
+        .icone-aba {
+          width: 40px;
+          height: 40px;
+        }
+
+        /* conteúdo principal */
+        .content {
+          transition: transform 0.3s ease;
+          position: relative;
+          z-index: 500;
+          /* fica acima do fundo */
+        }
+
+        /* quando o sidebar está ativo, empurra o conteúdo */
+        .sidebar.active~.content {
+          transform: translateX(250px);
+          /* mesmo valor da largura do menu */
+        }
+
+        .sidebar.active~.conteudo-main {
+          transform: translateX(120px);
+          /* mesmo valor da largura do menu */
+        }
+
+        .table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px auto;
+          font-size: 16px;
+          background-color: white;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: rgba(100, 100, 111, 0.15) 0px 5px 20px;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .table thead {
+          background: linear-gradient(90deg,
+              #32a560 0%,
+              #0ebd62 50%,
+              #4ec27c 100%);
+          color: white;
+        }
+
+        .conteudoBaixo {
+          width: 100%;
+          padding: 10px;
+          overflow-x: auto;
+          /* rolagem horizontal no mobile */
+        }
+
+        .table {
+          width: 100%;
+          border-collapse: collapse;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .table thead {
+          background: linear-gradient(90deg,
+              #32a560 0%,
+              #0ebd62 50%,
+              #4ec27c 100%);
+          color: white;
+        }
+
+        .table th,
+        .table td {
+          padding: 10px;
+          text-align: center;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .table tbody tr:hover {
+          background-color: #f1f8f4;
+        }
+
+        .table th {
+          font-weight: bold;
+        }
+
+        .table th,
+        .table td {
+          padding: 10px 25px;
+          text-align: center;
+        }
+
+        .table tbody tr:nth-child(even) {
+          background-color: #f5f5f5;
+        }
+
+        .table tbody tr:hover {
+          background-color: #e8f5e8;
+        }
+
+        /* status */
+        .status {
+          padding: 5px 12px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        .status.ativo {
+          background-color: #c8e6c9;
+          color: #2e7d32;
+        }
+
+        .status.pendente {
+          background-color: #fff9c4;
+          color: #f57f17;
+        }
+
+        .status.cancelado {
+          background-color: #ffcdd2;
+          color: #c62828;
+        }
+
+        /*Popup de cadastro de agendamento8*/
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 3000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.6);
+          justify-content: center;
+          align-items: center;
+        }
+
+        #overlay2 {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+          /* escurece um pouco menos */
+          backdrop-filter: blur(1px);
+          /* desfoque mais leve */
+          -webkit-backdrop-filter: blur(1px);
+          display: none;
+          z-index: 2000;
+          /* acima do menu lateral */
+        }
+
+        #overlay2.active {
+          display: block;
+        }
+
+        .botao-edicao {
+          display: flex;
+          justify-content: center;
+          font-weight: 550;
+          cursor: pointer;
+          border: none;
+          border-radius: 8px;
+          width: 150px;
+          font-size: 15px;
+          color: white;
+          padding: 10px;
+          background-color: #0ebd62;
+          margin: 30px auto;
+        }
+
+        .botao-edicao:hover {
+          background-color: #0ebd63e6;
+        }
+
+        .modal-content {
+          background: white;
+          border-radius: 10px;
+          width: 600px;
+          max-width: 90%;
+          padding: 20px;
+          box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes aparecer {
+          from {
+            transform: translateY(-30px);
+            opacity: 0;
+          }
+
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        .close {
+          float: right;
+          font-size: 24px;
+          font-weight: bold;
+          color: #555;
+          cursor: pointer;
+        }
+
+        .close:hover {
+          color: red;
+        }
+
+        .modal-info .coluna {
+          width: 100%;
+          background: #f8f9fa;
+          padding: 10px;
+          border-radius: 10px;
+          margin: 10px auto;
+        }
+
+        .labelCadastro {
+          font-size: 18px;
+        }
+
+        .inputCadastro {
+          font-size: 18px;
+          padding: 7px;
+          border-radius: 8px;
+          outline: none;
+          border: none;
+          width: 95%;
+          margin-top: 7px;
+          height: 40px;
+        }
+
+        .conjunto-info {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .info-extra textarea {
+          width: 100%;
+          font-size: 20px;
+          height: 80px;
+          font-size: 18px;
+          margin-top: 5px;
+          padding: 8px;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+          resize: none;
+        }
+
+        .modal-actions {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 15px;
+          gap: 10px;
+        }
+
+        /* Pump lateral */
+        .pump {
+          position: fixed;
+          top: 0;
+          right: -400px;
+          /* escondido inicialmente */
+          width: 400px;
+          height: 100%;
+          background: #fff;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+          transition: right 0.3s ease;
+          z-index: 3000;
+          /* acima do overlay */
+        }
+
+        .pump.active {
+          right: 0;
+          /* aparece */
+        }
+
+        .pump-content {
+          padding: 20px;
+          overflow-y: auto;
+          height: 100%;
+        }
+
+        .close {
+          cursor: pointer;
+          font-size: 24px;
+          float: right;
+        }
+
+        .pump-header {
+          text-align: center;
+        }
+
+        .foto-paciente {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 10px;
+        }
+
+        .parteCima .opcoes {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          /* permite quebrar linha em telas menores */
+          margin: 0 auto;
+          width: 72%;
+          gap: 10px;
+          /* espaçamento entre os itens */
+        }
+
+        .parteCima .opcoes form {
+          margin: auto;
+        }
+
+        /* Overlay (fundo preto transparente) */
+        #overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+          /* preto transparente */
+          backdrop-filter: blur(1px);
+          /* aplica desfoque */
+          -webkit-backdrop-filter: blur(1px);
+          /* suporte Safari */
+          /* preto transparente */
+          display: none;
+          /* escondido por padrão */
+          z-index: 900;
+        }
+
+        #overlay.active {
+          display: block;
+        }
+
+
+
+        /* Responsivo: telas pequenas */
+        @media (max-width: 768px) {
+          .parteCima .opcoes {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+          }
+
+          .sidebar.active~.content,
+          .sidebar.active~.conteudo-main {
+            transform: translateX(0);
+            /* mesmo valor da largura do menu */
+          }
+
+          .modal-content {
+            overflow: scroll;
+            max-width: 95%;
+            height: 90%;
+          }
+
+          .search {
+            width: 100%;
+          }
+
+          .search form {
+            max-width: 90%;
+            /* ocupa quase toda largura no mobile */
+          }
+
+          .container-agenda {
+            width: 100%;
+          }
+
+          .clientes .filtro {
+            font-size: 18px;
+          }
+
+          .parteCima .agendamentos {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: auto;
+          }
+
+          .table thead {
+            display: none;
+          }
+
+          /* estilo dos botões acima da tabela */
+          .acoes-topo {
+            display: flex;
+            justify-content: flex-start;
+            /* ou center, se quiser centralizar */
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+          }
+
+          .acoes-topo .botao-agendamento {
+            padding: 8px 12px;
+            font-size: 14px;
+          }
+
+          /* Reduz tamanho dos botões */
+          .table td[data-label="Ações"] .botao-agendamento {
+            padding: 10px;
+            font-size: 14px;
+          }
+
+          .table,
+          .table tbody,
+          .table tr,
+          .table td {
+            display: block;
+            width: 100%;
+          }
+
+          .table tr {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+          }
+
+          .table td {
+            text-align: left;
+            padding: 10px;
+            position: relative;
+          }
+
+          .table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: flex;
+            margin-bottom: 5px;
+            color: #32a560;
+          }
+
+          /* Ajuste dos botões dentro dos cards */
+          .table td[style*="display: flex"] {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            gap: 5px;
+          }
+
+          .parteCima .opcoes .agendamentos,
+          .parteCima .opcoes .clientes {
+            width: 90%;
+            /* cada bloco ocupa 100% da largura */
+          }
+
+          .parteCima .agendamentos .botao-agendamento {
+            width: 90%;
+            /* ocupa quase toda a largura do container */
+            padding: 8px 10px;
+            /* reduz o padding */
+            font-size: 14px;
+            /* reduz o tamanho do texto */
+            display: flex;
+            justify-content: center;
+            /* centraliza horizontalmente */
+            align-items: center;
+            /* centraliza verticalmente */
+            gap: 5px;
+            /* espaçamento entre ícone e texto */
+          }
+
+          .parteCima .agendamentos .botao-agendamento h2 {
+            font-size: 16px;
+            /* ajusta tamanho do texto */
+            margin: 0;
+            /* remove margem para não aumentar o botão */
+          }
+
+          .parteCima .agendamentos .botao-agendamento img {
+            width: 30px;
+            /* reduz o tamanho do ícone */
+          }
+
+          .parteCima .opcoes .agendamentos button {
+            width: 100%;
+            /* botão ocupa toda a largura */
+            justify-content: center;
+            /* centraliza conteúdo dentro do botão */
+          }
+
+          .parteCima .opcoes {
+            width: 100%;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .cards-section {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 cards por linha */
+          }
+        }
+
+        /* menu fechado */
+        .sidebar.closed {
+          transform: translateX(-100%);
+        }
+
+        /* menu sempre aberto em telas grandes */
+        @media (min-width: 1025px) {
+          .sidebar {
+            transform: translateX(0) !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .cards-section {
+            grid-template-columns: 1fr;
+            /* 1 card por linha */
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+          .parteCima .opcoes {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+          }
+
+
+          .modal-content {
+            height: 75%;
+            width: 90%;
+            padding: 20px;
+          }
+
+          .labelCadastro {
+            font-size: 25px;
+          }
+
+          .inputCadastro {
+            font-size: 22px;
+          }
+
+          .conjunto-info {
+            margin: 15px auto;
+            padding: 12px;
+          }
+
+          .sidebar.active~.conteudo-main {
+            transform: translateX(0);
+            /* Move conteúdo para o lado */
+          }
+
+          .search {
+            width: 100%;
+          }
+
+          .search form {
+            max-width: 500px;
+            /* ocupa quase toda largura no mobile */
+          }
+
+          .container-agenda {
+            width: 100%;
+          }
+
+          .clientes .filtro {
+            font-size: 18px;
+          }
+
+          .table thead {
+            display: none;
+          }
+
+          /* estilo dos botões acima da tabela */
+          .acoes-topo {
+            display: flex;
+            justify-content: flex-start;
+            /* ou center, se quiser centralizar */
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+          }
+
+          .acoes-topo .botao-agendamento {
+            padding: 8px 12px;
+            font-size: 14px;
+          }
+
+          /* Reduz tamanho dos botões */
+          .table td[data-label="Ações"] .botao-agendamento {
+            padding: 10px;
+            font-size: 14px;
+          }
+
+          .table,
+          .table tbody,
+          .table tr,
+          .table td {
+            display: block;
+            width: 100%;
+          }
+
+          .table tr {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+          }
+
+          .table td {
+            text-align: left;
+            padding: 10px;
+            position: relative;
+          }
+
+          .table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: flex;
+            margin-bottom: 5px;
+            color: #32a560;
+          }
+
+          /* Ajuste dos botões dentro dos cards */
+          .table td[style*="display: flex"] {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            gap: 5px;
+          }
+
+          .parteCima .opcoes .agendamentos,
+          .parteCima .opcoes .clientes {
+            width: 90%;
+            /* cada bloco ocupa 100% da largura */
+          }
+
+          .parteCima .agendamentos .botao-agendamento {
+            width: 90%;
+            /* ocupa quase toda a largura do container */
+            padding: 8px 10px;
+            /* reduz o padding */
+            font-size: 14px;
+            /* reduz o tamanho do texto */
+            display: flex;
+            justify-content: center;
+            /* centraliza horizontalmente */
+            align-items: center;
+            /* centraliza verticalmente */
+            gap: 5px;
+            /* espaçamento entre ícone e texto */
+          }
+
+          .parteCima .agendamentos {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: auto;
+          }
+
+          .parteCima .agendamentos .botao-agendamento h2 {
+            font-size: 16px;
+            /* ajusta tamanho do texto */
+            margin: 0;
+            /* remove margem para não aumentar o botão */
+          }
+
+          .parteCima .agendamentos .botao-agendamento img {
+            width: 30px;
+            /* reduz o tamanho do ícone */
+          }
+
+          .parteCima .opcoes .agendamentos button {
+            width: 100%;
+            /* botão ocupa toda a largura */
+            justify-content: center;
+            /* centraliza conteúdo dentro do botão */
+          }
+
+          .parteCima .opcoes {
+            width: 100%;
+          }
+        }

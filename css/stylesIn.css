@@ -1,0 +1,266 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #45a049;
+    --primary-light: #66BB6A;
+    --secondary-color: #2E7D32;
+    --accent-color: #81C784;
+    --text-primary: #2C3E50;
+    --text-secondary: #5D6D7E;
+    --text-light: #BDC3C7;
+    --background-primary: #F8F9FA;
+    --background-secondary: #FFFFFF;
+    --border-color: #E1E8ED;
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 50%, #E0F2F1 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+hr {
+    background: linear-gradient(to right, #289b42, #26923f 20%, #87ba2d 70%, #f6db25);
+    border: none;
+    height: 8px;
+    width: 100%;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(90deg,
+            #32a560 0%,
+            #0ebd62 50%,
+            #4ec27c 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: var(--shadow-medium);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.header-content img {
+    max-width: 180px;
+    height: auto;
+}
+
+.header-subtitle p {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 180px);
+}
+
+.login-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Welcome Section */
+.welcome-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.welcome-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+.feature-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Login */
+.login-card {
+    background: var(--background-secondary);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-heavy);
+    border: 1px solid var(--border-color);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-header h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
+.input-wrapper input {
+    flex: 1;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.4rem;
+}
+
+.login-button {
+    padding: 0.9rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 60%;
+    margin: auto;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.login-card {
+    background: var(--background-secondary);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-heavy);
+    border: 1px solid var(--border-color);
+    position: relative;
+    /* importante para o ::before funcionar */
+    overflow: hidden;
+}
+
+/* Linha colorida no topo do form */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light), var(--accent-color));
+}
+
+
+.login-button:hover {
+    background: var(--primary-dark);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .login-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-content img {
+        max-width: 150px;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-card {
+        padding: 1.5rem;
+    }
+
+    .login-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .login-button {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+}
